@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo">
+    <img src="https://www.capminds.com/wp-content/uploads/2025/03/Capminds-logo-with-text-2-1.svg" class="logo-img">
+  </div>
+
+  <button id="openModal" class="book-btn">+ Book Appointment</button>
+</header>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+
+    <!-- TOGGLE BUTTON -->
+    <div class="toggle-btn" onclick="toggleSidebar()">
+      <i id="toggleIcon" data-lucide="chevrons-left"></i>
+    </div>
+  
+    <!-- MENU -->
+    <div class="menu" onclick="goPage('index.html')">
+      <i data-lucide="calendar"></i>
+      <span class="text">Calendar</span>
+    </div>
+  
+    <div class="menu active">
+      <i data-lucide="layout-dashboard"></i>
+      <span class="text">Dashboard</span>
+    </div>
+  
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <div class="dashboard">
+
+      <h2>Dashboard</h2>
+
+      <!-- FILTERS -->
+      <div class="filters">
+        <div class="field">
+          <i data-lucide="search"></i>
+          <input placeholder="Patient Search" onkeyup="filterPatients()">
+        </div>
+
+        <div class="field">
+          <i data-lucide="search"></i>
+          <input placeholder="Doctor Search" onkeyup="filterPatients()">
+        </div>
+
+        <div class="field">
+          <i data-lucide="calendar"></i>
+          <input type="date">
+        </div>
+
+        <div class="field">
+          <i data-lucide="minus"></i>
+          <input type="date">
+        </div>
+
+        <button class="update-btn" onclick="filterPatients()">Update</button>
+      </div>
+      <div id="Appoinmenth2">
+        <h2>Appoinment Details</h2>
+      </div>
+
+      <!-- TABLE -->
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Patient</th>
+              <th>Doctor</th>
+              <th>Hospital</th>
+              <th>Specialty</th>
+              <th>Select Date</th>
+              <th>Select Time</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody id="patientTable"></tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <h3>Schedule Appointment</h3>
+      <span id="closeModal" style="cursor:pointer;">✖</span>
+    </div>
+
+    <div class="form-grid">
+
+      <div class="field">
+        <i data-lucide="user"></i>
+        <input id="patient" placeholder="Patient Name">
+      </div>
+      
+      <div class="field">
+        <i data-lucide="stethoscope"></i>
+        <select id="doctor">
+          <option value="">Select Doctor</option>
+        </select>
+      </div>
+      
+      <div class="field">
+        <i data-lucide="map-pin"></i>
+        <input type="text" id="hospital" placeholder="Hospital" readonly>
+      </div>
+      
+      <div class="field">
+        <i data-lucide="briefcase-medical"></i>
+        <input type="text" id="specialty" placeholder="Specialty" readonly>
+      </div>
+      
+      <div class="field">
+        <i data-lucide="calendar"></i>
+        <input type="text" id="dateInput" placeholder="Select Date" readonly onclick="openCalendar()">
+        <div id="calendarPopup" class="calendar-popup"></div>
+      </div>
+      
+      <div class="field">
+        <i data-lucide="clock"></i>
+        <input type="text" id="timeInput" placeholder="Select Time" readonly onclick="toggleTime()">
+        <div id="timePopup" class="time-popup"></div>
+      </div>
+    
+    </div>
+      
+
+    <textarea id="reason" placeholder="Reason"></textarea>
+
+    <div class="modal-actions">
+      <button id="cancelBtn">Cancel</button>
+      <button id="saveBtn">Save</button>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<div class="modal" id="detailsModal">
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <h3>Appointment Details</h3>
+      <span onclick="closeDetails()">✖</span>
+    </div>
+
+    <div id="detailsContent"></div>
+
+  </div>
+</div>
+<!-- SCRIPT -->
+<script src="script.js"></script>
+
+<script>
+  lucide.createIcons();
+</script>
+
+</body>
+</html>
