@@ -11,11 +11,6 @@ The application allows users to book Appointment, edit, delete, and manage appoi
 
 ---
 
-##  Source Code
-🔗 https://github.com/your-username/your-repo-name
-
----
-
 ##  Features
 
 -  Calendar view for appointments  
@@ -48,9 +43,9 @@ The application allows users to book Appointment, edit, delete, and manage appoi
 
 /Appointment-platform
 │── index.html
-│── style.css
+│── patient.html
 │── script.js
-│── assets/
+│── style.css
 
 
 ---
