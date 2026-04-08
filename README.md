@@ -28,7 +28,7 @@ The application allows users to book Appointment, edit, delete, and manage appoi
 
 - HTML  
 - CSS  
-- JavaScript (Vanilla JS)  
+- JavaScript   
 
 >  No frameworks or libraries used (as per requirements)
 
