@@ -7,7 +7,7 @@ The application allows users to book Appointment, edit, delete, and manage appoi
 ---
 
 ##  Live Demo
-🔗 https://your-netlify-link.netlify.app
+🔗(https://capminds-doctor-appointment-platform.netlify.app/)
 
 ---
 
